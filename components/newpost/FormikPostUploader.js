@@ -1,10 +1,10 @@
 import { View, Text, TextInput, Image  } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import * as Yup from 'yup'
 import { Formik } from 'formik'
 import { Button, Divider } from 'react-native-elements'
 import validUrl from 'valid-url'
-
+import {db,firebase} from '../../firebase'
 
 const PLACEHOLDER_IMG='https://img.icons8.com/plasticine/100/image.png'
 
@@ -15,6 +15,45 @@ const uploadPostSchema = Yup.object().shape({
 
 const FormikPostUploader = ({navigation}) => {
     const [thumbnailUrl , setThumnailUrl ] = useState(PLACEHOLDER_IMG)
+    const [currentLoggedUser, setCurrentLoggedUser] =useState(null)
+
+const getUsername = () =>{
+
+  const user = firebase.auth().currentUser
+  const usnsubscribe = db.collection('users').where('owner_uid', '=', user.uid).limit(1).onSnapshot(
+    snapshot => snapshot.docs.map(doc =>{
+      setCurrentLoggedUser({
+        username: doc.data().username,
+        profilePicture: doc.data().profilePicture
+
+      })
+           
+    })
+  )
+  return usnsubscribe
+}
+
+useEffect(()=>{
+  getUsername() 
+},[])
+
+const uploadPosttoFirebase =(imageUrl ,caption)=>{
+  const usnsubscribe = db.collection('users').doc(firebase.auth().currentUser.email)('post')
+ .collection('post')
+.add({
+  imageUrl: imageUrl,
+  user : currentLoggedUser.username,
+  profilePicture: currentLoggedUser.profilePicture,
+  owner_uid: firebase.auth().currentUser.uid,
+  caption: caption,
+  createAt: firebase.firebase.FieldValue.serverTimestamp(),
+  likes: 0,
+  like_by_user: [],
+  comments: [],
+}) 
+
+}
+
   return (
     <Formik
         initialValues= {{caption : '', imageUrl:''}}
