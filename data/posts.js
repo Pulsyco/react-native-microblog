@@ -1,7 +1,7 @@
 import { USERS } from "./users";
 export const POSTS =[
     {
-    imageUrl: require('../assets/ajoy.jpg'),
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTOpbbIFH25rlJcepF6K_ftmjBWlUVX8iAeqaVw52OEQ&s',
     user: USERS [0].user,
     likes: 55  ,
     caption : 'Train Ride to hoogwarts.',
@@ -21,7 +21,7 @@ export const POSTS =[
 
 },
 {
-    imageUrl: require('../assets/satan.jpg'),
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHthnLBLb_w8zE6eGgb9z76HPvekn-Ad2yuVcQiJiaKg&s',
     user: USERS[1].user,
     likes: 7870,
     caption : "React Native is very similar to React JS. So if you don't know React Native, it's relatively easy to pick up as you'll learn here",

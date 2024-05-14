@@ -1,23 +1,23 @@
 export const USERS = [
     {
       user: 'pulak',
-      image: require('../assets/pulak.jpg'),
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTOpbbIFH25rlJcepF6K_ftmjBWlUVX8iAeqaVw52OEQ&s',
     },
     {
       user: 'Boikuntha',
-      image: require('../assets/boikuintha.jpg'),
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTOpbbIFH25rlJcepF6K_ftmjBWlUVX8iAeqaVw52OEQ&s',
     },
     {
       user: 'Trishit',
-      image: require('../assets/trishit.jpg'),
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTOpbbIFH25rlJcepF6K_ftmjBWlUVX8iAeqaVw52OEQ&s',
     },
     {
       user: 'Gaurav',
-      image: require('../assets/gaurav.jpg'),
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTOpbbIFH25rlJcepF6K_ftmjBWlUVX8iAeqaVw52OEQ&s',
     },
     {
       user: 'Rajarshi',
-      image: require('../assets/rajashree.jpg'),
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTOpbbIFH25rlJcepF6K_ftmjBWlUVX8iAeqaVw52OEQ&s',
     },
     
   ];

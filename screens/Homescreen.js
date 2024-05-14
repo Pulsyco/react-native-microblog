@@ -1,5 +1,5 @@
 import { View, Text, SafeAreaView, StyleSheet, ScrollView } from 'react-native';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../components/home/Header';
 import Stories from '../components/home/Stories'; 
 import Post from '../components/home/Post';
