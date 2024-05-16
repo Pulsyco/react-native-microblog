@@ -42,14 +42,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     marginHorizontal: 10,
+    paddingTop: 30,
   },
   iconscontainer:{
     flexDirection: 'row',
+    
   },
   logo:{
     width :100,
     height: 50,
     resizeMode : 'contain',
+    
   },
   icon:{
     width :30,

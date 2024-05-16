@@ -19,8 +19,12 @@ const FormikPostUploader = ({ navigation }) => {
 
     const getUsername = () => {
         const user = firebase.auth().currentUser
-        const unsubscribe = db.collection('users').where('owner_uid', '==', user.uid).limit(1).onSnapshot(
-            snapshot => snapshot.docs.map(doc => {
+        const unsubscribe = db.collection('users')
+        .where('owner_uid', '==', user.uid)
+        .limit(1)
+        .onSnapshot(
+            snapshot => 
+                snapshot.docs.map(doc => {
                 setCurrentLoggedUser({
                     username: doc.data().username,
                     profilePicture: doc.data().profile_picture
@@ -44,9 +48,9 @@ const FormikPostUploader = ({ navigation }) => {
             user: currentLoggedUser.username,
             profilePicture: currentLoggedUser.profilePicture,
             owner_uid: firebase.auth().currentUser.uid,
+            owner_email: firebase.auth().currentUser.email,
             caption: caption,
-            createAt: firebase.firestore.FieldValue.serverTimestamp(),
-            likes: 0,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             like_by_user: [],
             comments: [],
         })
